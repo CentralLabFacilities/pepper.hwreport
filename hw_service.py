@@ -11,7 +11,7 @@ class PepperHardwareService:
 
     def request(self):
         if time.time() - self.last_signal >= 5.0:
-            p = subprocess.Popen(['mpstat', '-u', "2", '1'], stdout=subprocess.PIPE)
+            p = subprocess.Popen(['mpstat', '-u', '2', '1'], stdout=subprocess.PIPE)
             out, err = p.communicate()
             self.send(out)
 
